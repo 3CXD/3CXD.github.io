@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Homemade+Apple&family=Pacifico&display=swap');
+
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f4f4f9;
     margin: 0;
     padding: 20px;
+	background-image: url('notebook.jpg'); 
 }
 
-h1, h2 {
-    color: #333;
+h1 {
+    color: red;
+  font-family: 'Pacifico', cursive;
+}
+
+h2 {
+    color: blue;
+  font-family: 'Pacifico', cursive;
 }
 
 #game {
@@ -16,28 +26,27 @@ h1, h2 {
     grid-template-rows: repeat(3, 100px);
     gap: 5px;
     margin: 20px auto;
+    text-align: center;
 }
 
 .cell {
     width: 100px;
     height: 100px;
-    background-color: #fff;
     border: 2px solid #333;
     font-size: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-family: 'Pacifico';
 }
 
-.cell:hover {
-    background-color: #ddd;
-}
 
 #result {
     margin-top: 20px;
     font-size: 1.5em;
-    color: #333;
+    color: green;
+    font-family: 'Pacifico';
 }
 
 #leaderboard {
@@ -46,6 +55,7 @@ h1, h2 {
     max-width: 300px;
     margin: 0 auto;
     text-align: left;
+    font-family: 'Pacifico';
 }
 
 #leaderboard li {
@@ -59,3 +69,18 @@ h1, h2 {
 center {
 	text-align: center;
 }
+
+.left {
+    flex: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.right {
+    flex: 50%;
+    padding: 20px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
