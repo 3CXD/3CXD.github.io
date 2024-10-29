@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+<h1>Buscaminas</h1>
+
+<div id="controls">
+    <label for="difficulty">Dificultad:</label>
+    <select id="difficulty">
+        <option value="5x5-5">Fácil (5x5, 5 minas)</option>
+        <option value="8x8-15">Medio (8x8, 15 minas)</option>
+        <option value="10x10-25">Difícil (10x10, 25 minas)</option>
+        <option value="12x12-40">Muy Difícil (12x12, 40 minas)</option>
+        <option value="15x15-60">Leyenda (15x15, 60 minas)</option>
+    </select>
+    <button onclick="startGame()">Iniciar Juego</button>
+</div>
+
+<div class="board" id="board"></div>
+
+		<script src="function.js"></script>
+</body>
+</html>
+
