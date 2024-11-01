@@ -4,7 +4,6 @@ let board = [];
     let gameFinished = false;
 
     function startGame() {
-    	gameFinished = false;
         const difficulty = document.getElementById("difficulty").value.split("-");
         const rows = parseInt(difficulty[0].split("x")[0]);
         const cols = parseInt(difficulty[0].split("x")[1]);
@@ -12,6 +11,7 @@ let board = [];
         
         createBoard(rows, cols);
         firstClick = true;
+    	gameFinished = false;
     }
 
     function createBoard(rows, cols) {
@@ -148,5 +148,6 @@ let board = [];
         }
         if (openedCells === board.length * board[0].length - mineCount) {
             alert("¡Felicidades! Has ganado.");
+		    gameFinished = true;
         }
     }
