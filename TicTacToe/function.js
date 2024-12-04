@@ -6,6 +6,10 @@ let currentPlayer = 'X';
 let gameOver = false;
 let startTime = null;
 
+// Nombre del juego en la API
+const GAME_NAME = "tictactoeCesar";
+
+// Inicializa la tabla de líderes al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     loadLeaderboard();
 });
@@ -69,23 +73,55 @@ function saveRecord() {
     let playerName = prompt('¡Ganaste! Introduce tu nombre:');
     if (playerName) {
         let endTime = new Date();
-        let timeTaken = (endTime - startTime) / 1000;
-        let records = JSON.parse(localStorage.getItem('leaderboard')) || [];
-        records.push({ name: playerName, time: timeTaken, date: new Date().toLocaleString() });
-        records.sort((a, b) => a.time - b.time);
-        records = records.slice(0, 10); // Mantener solo los primeros 10
-        localStorage.setItem('leaderboard', JSON.stringify(records));
-        loadLeaderboard();
+        let timeTaken = Math.round((endTime - startTime) / 1000 * 1000); // Convertir a milisegundos
+
+        // Prepara los datos para la API
+        const data = new URLSearchParams({
+            player: playerName,
+            score: timeTaken,
+            game: GAME_NAME
+        });
+
+        // Enviar los datos a la API
+        fetch('save_score.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: data
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.status === 'success') {
+                alert(result.message);
+                loadLeaderboard(); // Actualiza la tabla de líderes
+            } else {
+                console.error(result.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error al guardar el tiempo:', error);
+        });
     }
 }
 
 function loadLeaderboard() {
-    let records = JSON.parse(localStorage.getItem('leaderboard')) || [];
-    leaderboard.innerHTML = '';
-    records.forEach(record => {
-        let li = document.createElement('li');
-        li.textContent = `${record.name}: ${record.time}s - ${record.date}`;
-        leaderboard.appendChild(li);
-    });
+    const url = `http://primosoft.com.mx/games/api/getscores.php?game=${encodeURIComponent(GAME_NAME)}&orderAsc=1`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.data && data.data.length > 0) {
+                leaderboard.innerHTML = data.data.map(
+                    score => `<li>${score.player}: ${score.score / 1000} segundos</li>`
+                ).join('');
+            } else {
+                leaderboard.innerHTML = '<li>No hay tiempos registrados.</li>';
+            }
+        })
+        .catch(error => {
+            console.error('Error al obtener los tiempos:', error);
+            leaderboard.innerHTML = '<li>Error al obtener los tiempos.</li>';
+        });
 }
 
