@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Memorama.com </title>
+    <link rel="stylesheet" href="/Css/style.css">
+    <!--
+        Ira Nomas <3
+    -->
+</head>
+<body>
+    <h1 id="Titulo">Juego del Memorama Version Web </h1>
+
+    <input type="text" id="jugador1" placeholder="Nombre Jugador 1">
+    <input type="text" id="jugador2" placeholder="Nombre Jugador 2">
+    <div class="jugadores">
+        <p id="nombrejuga1"></p>
+        <p id="nombrejuga2"></p>
+    </div>
+
+    <div class="marcador">
+        <pre id="marcador1"></pre>
+        <pre id="marcador2"></pre>
+    </div>
+    <div class="boton">
+        <button class="Button" onclick="generarTablero()" id="botoniniciar">Iniciar Juego</button>
+    </div>
+
+    <div class="tablero" id="tablero"></div>
+
+    <br>
+
+    <div class="boton">
+        <button class="Button" onclick="ReiniciarJuego()" id="reiniciar">Reiniciar</button>
+    </div>
+
+    <script src="/js/memorama.js"></script>
+</body>
+</html>
