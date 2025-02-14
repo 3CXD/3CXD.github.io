@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Red Social de Videojuegos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/Styles.css" />
+</head>
+<body class="body">
+    <div class="userBanner">
+        <div class="cabezaPublicacion">
+            <img class="userImg" src="images/users/masterChifChiquito.jpeg">
+            <div class="littleBlank"></div>
+            <h1><div class="blue">Master_Chif_Chikito</div> </h1>
+            <div class="blank"></div>
+            <div class="ponteVertical">
+                <h4 class="blue">Descripción:</h4>
+                <p>Me encanta el Halo</p>
+            </div>
+        </div>
+        <div class="seyse">
+            <span><strong>Seguidores:</strong> 120</span> |
+            <span><strong>Seguidos:</strong> 75</span>
+        </div>
+    </div>
+    <div clas="blank"></div>
+    <div class="publications">
+        <h2 class="blue">Publicaciones</h2>
+        <div class="publicationsPosts">
+            <div class="cardFromUserProfile">
+                <div class="postCardContent">
+                    <div class="cabezaPublicacion">
+                        <img class="userImg" src="images/users/masterChifChiquito.jpeg">
+                        <div class="littleBlank"></div>
+                        <h5><div class="blue">Master_Chif_Chikito</div> </h5>
+                        <div class="blank"></div>
+                        <p><i class="bi bi-clock"></i> Hace 1 semana </p>
+                    </div>
+                    <div class="littleBlank"></div>
+                    <div class="cabezaPublicacion">
+                        <div class="blank"></div>
+                        <p>En definitiva la serie mató al juego :(</p>
+                    </div>
+                    <img class="post-img" src="images/posts/aMimirSeHaDicho.jpg">
+                    <div class="blank"></div>
+                    <div class="derecha" style="padding-top: 10px;">
+                        <button class="btn btn-outline-primary btn-like" data-liked="false">Dar Like</button>
+                        <span class="likes-count blue">0 Likes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Manejar el evento de dar/ quitar like
+            $('.btn-like').click(function () {
+                let $this = $(this);
+                let isLiked = $this.data('liked');
+
+                if (isLiked) {
+                    $this.text('Dar Like');
+                    $this.removeClass('btn-danger').addClass('btn-outline-primary');
+                    $this.data('liked', false);
+                    let currentLikes = parseInt($this.siblings('.likes-count').text());
+                    $this.siblings('.likes-count').text(currentLikes - 1 + ' Likes');
+                } else {
+                    $this.text('Quitar Like');
+                    $this.removeClass('btn-outline-primary').addClass('btn-danger');
+                    $this.data('liked', true);
+                    let currentLikes = parseInt($this.siblings('.likes-count').text());
+                    $this.siblings('.likes-count').text(currentLikes + 1 + ' Likes');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

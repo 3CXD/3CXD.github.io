@@ -1,0 +1,238 @@
+.post-card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    color:white;
+    background-color: rgb(30, 30, 30);
+    border-color: #00D4FF;
+    border: 2px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    ransition: box-shadow 0.1s ease-in-out;
+}
+.loginCard {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;
+    color:white;
+    background-color: rgb(30, 30, 30);
+    border-color: #00D4FF;
+    border: 2px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    ransition: box-shadow 0.1s ease-in-out;
+}
+.post-img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    ransition: box-shadow 0.1s ease-in-out;
+    border-radius: 10px;
+}
+.userImg {
+    width: 10%;
+    height: auto;
+    border: 1px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    ransition: box-shadow 0.1s ease-in-out;
+    border-radius: 50%;
+}
+.post-body {
+    padding: 15px;
+}
+.body{
+    justify-content: center;
+    align-items: center;
+    background-image: url('backgrounds/hexagons.jpg'); /* Reemplaza 'fondo.jpg' con el nombre de tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed;
+    color:white;
+}
+.contenedorDeColumnas{
+    display: flex;
+    margin: 5%;
+}
+.columnaMitad{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.columnaTercera{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.columnaTerceraPorDos{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.columnaMitadLogo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #00D4FF;
+    position: sticky;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+.columnaMitadIzquierda{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+.blank{
+    width: 10%;
+    height: 10%;
+}
+.littleBlank{
+    width: 2%;
+    height: 2%;
+}
+.descripcion{
+    text-align: left;
+}
+.derecha{
+    text-align: right;
+}
+.cabezaPublicacion{
+    display: flex;
+    align-items: center;
+}
+.postCardContent{
+    margin: 5%;
+}
+.blue{
+    color:#00D4FF;
+}
+.botonAzul{
+    padding: 5px;
+    color: white;
+    background-color: #00D4FF;
+    border-radius: 10px;
+}
+.logoPreliminar{
+    font-size: 350px;
+}
+.userBanner{
+    background-color: rgb(30, 30, 30);
+    padding: 3%;
+    border-bottom: 2px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    transition: box-shadow 0.1s ease-in-out;
+}
+.ponteVertical{
+    display: flex;
+    flex-direction: column;
+}
+.seyse{
+    padding-left: 150px;
+}
+.cardFromUserProfile {
+    border-radius: 10px;
+    width: 50%;
+    overflow: hidden;
+    color:white;
+    background-color: rgb(30, 30, 30);
+    border-color: #00D4FF;
+    border: 2px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    transition: box-shadow 0.1s ease-in-out;
+}
+.publications{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+}
+.publicationsPosts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contenedorDeColumnas {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        margin:0%;
+        width: 100%;
+    }
+
+    .columnaMitadIzquierda {
+        position: sticky;
+        top: 0; /* Esto asegura que se quede fija en la parte superior */
+        z-index: 10; /* Asegura que esté al frente de la otra columna */
+        width: 100%;
+        height: 25%;
+        margin-bottom: 20px;
+    }
+
+    .columnaMitad {
+        width: 80%;
+    }
+
+    .body {
+        justify-content: top;
+        align-items: top;
+        background-image: url('backgrounds/hexagons.jpg'); /* Reemplaza 'fondo.jpg' con el nombre de tu imagen */
+        background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-attachment: fixed;
+        color: white;
+    }
+    .descripcion{
+        margin-bottom: 20px;
+        padding: 20px;
+        overflow: hidden;
+        color:white;
+        background-color: rgb(30, 30, 30);
+        border-color: #00D4FF;
+        border-bottom: 2px solid #00D4FF;
+        box-shadow: 0 0 10px #00D4FF;
+        transition: box-shadow 0.1s ease-in-out;
+    }
+    .logoPreliminar{
+        font-size: 1px;
+    }
+    .loginCard{
+        align-self: center;
+        margin-top: 35%;
+    }
+    .columnaTercera{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .columnaTerceraPorDos{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
