@@ -37,6 +37,18 @@
     ransition: box-shadow 0.1s ease-in-out;
     border-radius: 50%;
 }
+.ajustarImagenUsuario{
+    width: 100%;
+    padding: 25%;
+}
+.userImgTimeLine {
+    width: 100%;
+    height: auto;
+    border: 1px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    ransition: box-shadow 0.1s ease-in-out;
+    border-radius: 50%;
+}
 .post-body {
     padding: 15px;
 }
@@ -50,11 +62,45 @@
     background-attachment: fixed;
     color:white;
 }
+.bodyTimeLine{
+    justify-content: center;
+    align-items: center;
+    background-image: url('backgrounds/hexagons.jpg'); /* Reemplaza 'fondo.jpg' con el nombre de tu imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed;
+    color:white;
+    height: 100%;
+}
+.columnaPublicaciones{
+    width: 85%;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+}
 .contenedorDeColumnas{
     display: flex;
     margin: 5%;
 }
+.contenedorDeColumnasTimeLine{
+    display: flex;
+    height: auto;
+}
+.contenedorDeColumnasLogin{
+    display: flex;
+    height: auto;
+    margin: 10%;
+}
 .columnaMitad{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.columnaMitadLogin{
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -65,6 +111,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.columnaNavBar{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
 }
 .columnaTerceraPorDos{
     width: 60%;
@@ -112,6 +169,18 @@
     display: flex;
     align-items: center;
 }
+.cabezaPublicacionPerfil{
+    display: flex;
+    align-items: center;
+}
+.ponteHorizontal{
+    display: flex;
+    align-items: center;
+}
+.userName{
+    display: flex;
+    align-items: center;
+}
 .postCardContent{
     margin: 5%;
 }
@@ -135,6 +204,10 @@
     transition: box-shadow 0.1s ease-in-out;
 }
 .ponteVertical{
+    display: flex;
+    flex-direction: column;
+}
+.ponteVerticalPerfil{
     display: flex;
     flex-direction: column;
 }
@@ -170,6 +243,16 @@
     justify-content: center;
     width: 100%;
     height: auto;
+}
+.navBar{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(30, 30, 30);
+    border-right-color: #00D4FF;
+    border-right: 2px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    transition: box-shadow 0.1s ease-in-out;
 }
 
 /* Responsive */
@@ -221,7 +304,6 @@
     }
     .loginCard{
         align-self: center;
-        margin-top: 35%;
     }
     .columnaTercera{
         width: 80%;
@@ -233,6 +315,97 @@
         width: 80%;
         display: flex;
         justify-content: center;
+    }
+    .publicationsPosts{
+        width: 100%;
+    }
+    .cardFromUserProfile{
+        width: 80%;
+    }
+    .userName{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        text-align: left;
+    }
+    .userBanner{
+        justify-content: left;
+        text-align: left;
+    }
+    .ponteVerticalPerfil{
+        width: 100%;
+    }
+    .seyse{
+        padding-left: 0%;
+    }
+    .cabezaPublicacionPerfil{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    .columnaMitadLogin{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .contenedorDeColumnasLogin{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .contenedorDeColumnasTimeLine{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin:0%;
+        width: 100%;
+    }
+    .columnaNavBar {
+        position: sticky;
+        top: 0;
+        z-index: 10; 
+        width: 100%;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+    .navBar{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+        align-items: center;
+        overflow: hidden;
+        justify-content: center;
+        background-color: rgb(30, 30, 30);
+        border-color: #00D4FF;
+        border-bottom: 2px solid #00D4FF;
+        box-shadow: 0 0 10px #00D4FF;
+        transition: box-shadow 0.1s ease-in-out;
+    }
+    .ajustarImagenUsuario{
+        height: 130px;
+        padding: 25px;
+        width: 130px;
+    }
+    .userImgTimeLine {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #00D4FF;
+        box-shadow: 0 0 10px #00D4FF;
+        ransition: box-shadow 0.1s ease-in-out;
+        border-radius: 50%;
+    }
+    .columnaPublicaciones{
+        width: 100%;
+        padding: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-self: center;
     }
 }
 
