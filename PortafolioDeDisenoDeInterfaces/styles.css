@@ -81,6 +81,10 @@ body{
     flex-direction: row;
     justify-content: center;
     margin: 20px;
+    height: auto;
+    width: auto;
+    flex-wrap: wrap;
+    gap: 5px;
 }
 
 .botones{
@@ -88,4 +92,58 @@ body{
     flex-direction: row;
     justify-content: center;
     margin: 20px;
+}
+
+.apartados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Justifica los botones a la izquierda */
+    gap: 1px; /* Espaciado entre botones */
+}
+
+.ponteVertical{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    background: linear-gradient(to right, #000000, #0011ff);
+
+}
+.carousel {
+    position: relative;
+    margin: 20px auto;
+    overflow: hidden;
+    height: 500px;
+    border: 1px #000000;
+}
+
+.carousel-slides img {
+    width: auto;
+    display: none;
+    height: 500px;
+    border:1px #000000;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+.casos img{
+    width: auto;
+    height: 500px;
 }
